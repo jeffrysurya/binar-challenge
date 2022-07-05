@@ -1,0 +1,37 @@
+body,
+html {
+  font-size: 1px;
+  background-color: #9c835f !important;
+}
+
+.navi {
+    position: relative;
+    font-size: 50px;
+    left: 50px;
+    color: rgb(228, 168, 58);
+}
+.player-text {
+    font-size: 30rem;
+    font-weight: bold;
+    color: rgb(22, 19, 19);
+}
+.option {
+    height: 100rem;
+    width: 85rem;
+}
+
+.vs {
+    font-size: 50rem;
+    font-weight: bold;
+    color: rgb(207, 29, 29);
+}
+
+.text-result {
+    font-size: 50rem;
+    font-weight: bold;
+    color: rgb(22, 19, 19);
+}
+.refresh {
+    height: 85rem;
+    width: 85rem;
+}

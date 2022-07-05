@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "dicoding",
+    "password": "testdicoding",
+    "database": "database_development",
+    "host": "orchard.jsd.web.id",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "dicoding",
+    "password": "testdicoding",
+    "database": "database_test",
+    "host": "orchard.jsd.web.id",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "dicoding",
+    "password": "testdicoding",
+    "database": "database_production",
+    "host": "orchard.jsd.web.id",
+    "dialect": "postgres"
+  }
+}

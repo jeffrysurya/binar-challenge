@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nanoid": "^3.3.4",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.1",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "nodemon": "^2.0.16"
+  },
+  "name": "jsd-web",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jeffrysurya/binar-challenge.git"
+  },
+  "author": "JSD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jeffrysurya/binar-challenge/issues"
+  },
+  "homepage": "https://gitlab.com/jeffrysurya/binar-challenge#readme",
+  "description": ""
+}

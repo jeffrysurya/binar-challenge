@@ -1,0 +1,180 @@
+.bg-image {
+  background-image: url("/assets/main-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+.navbar {
+  font-size: 14px;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.text-center h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 100px;
+}
+
+.text-center p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 100px;
+}
+.text-center .btn {
+  width: 200px;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  margin-right: -20px;
+}
+.scroll-down a p {
+  font-size: 10px;
+  color: whitesmoke;
+}
+
+.games {
+  background-image: url("/assets/the-games-bg.jpg");
+  background-position: cover;
+  height: 100vh;
+}
+
+.feature {
+  background-image: url("/assets/features.jpg");
+  background-position: cover;
+  height: 100vh;
+  padding: 14ch 0;
+}
+#feature-text p {
+  color: white;
+  font-size: 20px;
+}
+#feature-text h1 {
+  color: white;
+  font-size: 50px;
+}
+
+#feature-list {
+  margin-top: 50px;
+}
+
+#feature-list h1 {
+  font-size: 40px;
+}
+#feature-list p {
+  font-size: 20px;
+}
+
+.requirements {
+  background-image: url("/assets/requirements.png");
+  background-position: cover;
+  height: 100vh;
+  padding: 14vh 0;
+}
+.requirements .grid-container {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+}
+
+.requirements .grid-item {
+  padding: 10px;
+  border: dashed 2px rgba(168, 206, 204, 0.63);
+}
+
+.requirements .grid-container p {
+  font-size: 20px;
+  color: whitesmoke;
+}
+
+.requirements .item5 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.top-scores {
+  /*background-image: url("assets/top-score-bg.png");*/
+  background-color: rgb(46, 46, 46);
+  height: 100vh;
+  background-size: cover;
+  margin-top: -10px;
+  padding: 14ch 0;
+}
+
+#top-text h1,
+p {
+  color: antiquewhite;
+}
+.top-scores .grid-item.item1 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+.top-scores .grid-item.item2 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.top-scores .grid-item.item3 {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.newsletter {
+  /*background-image: url("/assets/the-games-bg.jpg");*/
+  background-color: rgb(46, 46, 46);
+  background-position: cover;
+  height: 100vh;
+  padding: 14ch 0;
+}
+
+footer {
+  padding: 40px 0;
+  background-color: rgb(46, 46, 46);
+}
+
+footer .menu,
+footer .icon,
+footer .last {
+  display: flex;
+  float: right;
+}
+footer .menu {
+  padding-left: 0;
+}
+footer ul {
+  list-style: none;
+}
+footer li {
+  margin-left: 30px;
+}
+
+footer .icon {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  margin-left: 30px;
+}
+
+footer .facebook-icon {
+  background-image: url('/assets/facebook.svg');
+}
+footer .twitter-icon {
+  background-image: url('/assets/twitter.svg');
+}
+footer .youtube-icon {
+  background-image: url('/assets/Vector.svg');
+}
+footer .twitch-icon {
+  background-image: url('/assets/twitch.svg');
+}
