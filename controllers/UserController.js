@@ -1,22 +1,48 @@
 const {UserAuth} = require('../../models');
-const {nanoid} = require('nanoid')
-const bcrypt = require('bcrypt');
+const { uniqueId } = require('../utility/nanoid');
+const { comparePassword } = require('../utility/bcrypt')
 
-exports.createUser = (req, res) => {
-    // const hashedPassword = bcrypt.hashSync(req.body.password, 10)
-    const { email, username, password } = req.body;
+
+class UserAuthController {
+    static register(req,res) {
+        const { email, username, password,role } = req.body;
     UserAuth.create(
         {
-            user_id: nanoid(16),
+            user_id: uniqueId,
             email,
             username,
-            password
+            password,
+            role,
         })
         .then((data) => {
             res.status(201).json(data)
         })
         .catch(err => console.log(err));
 }
+
+    static async login(req, res) {
+        try {
+          const { username, password } = req.body;
+          const user = await UserAuth.findOne({
+            where: {
+                username,
+            },
+          });
+          if (!user) {
+            return res.status(401).json({
+                message: `Invalid Username or Password`,
+            })
+          }
+        const isMatch = await comparePassword(password);
+            if (isMatch) {
+
+            }
+
+        } catch {
+
+        }
+    }
+    }
 
 exports.validateUser = (req, res) => {
     const { email, password } = req.body;
@@ -35,24 +61,6 @@ exports.validateUser = (req, res) => {
             })
         }
     })
-    // console.log(result.password)
-    // if (!validEmail) {
-    //     res.json({
-    //         message: "The email is not valid"
-    //     })
-    // }
-    // // const validPassword = await bcrypt.compareSync(password, validEmail.password)
-    // const validPassword = password === pass
-    // console.log(pass)
-    // if (!validPassword) {
-    //     res.json({
-    //         message: "password is not valid"
-    //     })
-    // } else {
-    //     res.json({
-    //         message: "you have access"
-    //     })
-    // }
 }
 
 exports.getAllUser = async (req, res) => {
@@ -88,3 +96,4 @@ exports.deleteUser = (req, res) => {
     }))
 }
 
+module.exports = {UserAuthController }
