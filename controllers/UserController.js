@@ -1,14 +1,13 @@
 const {UserAuth} = require('../../models');
-const { uniqueId } = require('../utility/nanoid');
-const { comparePassword } = require('../utility/bcrypt')
-
+const { CreateUniqueId } = require('../utility/nanoid');
+const { comparePassword } = require('../utility/bcrypt');
 
 class UserAuthController {
     static register(req,res) {
         const { email, username, password,role } = req.body;
     UserAuth.create(
         {
-            user_id: uniqueId,
+            user_id: CreateUniqueId(),
             email,
             username,
             password,
@@ -56,7 +55,7 @@ class UserAuthController {
         }
     }
 
-    module.exports = {UserAuthController }
+module.exports = {UserAuthController }
 // exports.validateUser = (req, res) => {
 //     const { email, password } = req.body;
 //     const validEmail = UserAuth.findOne({

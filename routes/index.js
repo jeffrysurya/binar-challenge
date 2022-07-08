@@ -1,3 +1,15 @@
+const router = require('express').Router();
+const PageController = require('../controllers/PageController');
+const {UserAuthController} = require('../controllers/UserController');
+const loginRouter = require('./loginRouter')
+
+router.get('/', PageController.home)
+router.get('/game', PageController.game)
+router.get('/login', PageController.login)
+// Just Render the Page
+router.use(loginRouter)
+
+
 module.exports = (app) => {
 const UserAuth = require('../controllers/UserController')
 
