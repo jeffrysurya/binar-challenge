@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      user_game_biodata.belongsTo(models.userauth, {as: 'UserAuth', foreignKey: 'user_id', sourceKey: 'id' });
+      userBiodata.belongsTo(models.UserAuth, {as: 'UserAuth', foreignKey: 'user_id', sourceKey: 'id' });
     }
   }
   userBiodata.init({

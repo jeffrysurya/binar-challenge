@@ -6,7 +6,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const flash = require('express-flash')
 const routes = require('./routes')
-const passport = require('./lib/passport')
+const passport = require('./utility/passport')
+const morgan = require('morgan')
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs'); ///use ejs as template engine
 
 app.use(passport.initialize());
+app.use(morgan('dev'))
 app.use(routes);
 app.use(flash());
 

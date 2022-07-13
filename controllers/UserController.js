@@ -1,17 +1,18 @@
-const {UserAuth} = require('../../models');
+const {UserAuth} = require('../models');
 const { CreateUniqueId } = require('../utility/nanoid');
 const { comparePassword } = require('../utility/bcrypt');
+const { generateToken } = require('../utility/jwt')
 
 class UserAuthController {
     static register(req,res) {
-        const { email, username, password,role } = req.body;
+        const { email, username, password} = req.body;
     UserAuth.create(
         {
             user_id: CreateUniqueId(),
             email,
             username,
             password,
-            role,
+            role: 'user',
         })
         .then((data) => {
             res.status(201).json(data)
@@ -21,10 +22,11 @@ class UserAuthController {
 
     static async login(req, res) {
         try {
-          const { username, password } = req.body;
+          const { email, password } = req.body;
+          //console.log(email, password)
           const user = await UserAuth.findOne({
             where: {
-                username,
+                email,
             },
           });
           if (!user) {
@@ -40,9 +42,12 @@ class UserAuthController {
                     role: user.role,
                 };
                 const access_token = generateToken(payload);
-                return res.status(200).json({
+                console.log(req.headers)
+                // console.log(access_token)
+                return [res.status(200).json({
                     access_token: access_token,
-                });
+                })] 
+                
             } else {
                 return res.status(401).json({
                     message: `Invalid Username or Password`,
@@ -50,12 +55,13 @@ class UserAuthController {
             }
 
         } catch(err) {
+            console.log(err)
             return res.status(401).json(err);
         }
         }
     }
 
-module.exports = {UserAuthController }
+module.exports = { UserAuthController }
 // exports.validateUser = (req, res) => {
 //     const { email, password } = req.body;
 //     const validEmail = UserAuth.findOne({
